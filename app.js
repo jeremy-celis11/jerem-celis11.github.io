@@ -12,10 +12,11 @@ let nombreModal=document.getElementById('nombreModal')
 let apellidosModal=document.getElementById('apellidosModal')
 let fechaModal=document.getElementById('nacimientoModal')
 let emailModal=document.getElementById('emailModal')
-
 const modal_container = document.getElementById('modal_container');
 const close = document.getElementById('close');
 
+/*Funcion que me limpia los imputs 
+*/
 function limpiarInputs(){
     ids.value=''
     nombre.value=''
@@ -28,8 +29,10 @@ function limpiarInputs(){
     apellidosModal.value=''
     fechaModalModal.value=''
     emailModal.value=''
-}//lista
-
+}
+/*Funcion que recibe como parametro el id de usuario a modificar para luego tanto modificarlo en 
+el localStorage como en el div 
+*/
 function actulizarUsuarios(id){
     let formulario=JSON.parse(localStorage.getItem('Usuarios'))
     for (let i = 0; i < formulario.length; i++){
@@ -47,16 +50,19 @@ function actulizarUsuarios(id){
                     obtenerUsuarios()
                 }
             }else{
-                alert('empty form')
+                alert('Formulario vacio')
                 limpiarInputs()
             }
         });
     }
     
 }
+/*Este la funcion me permitira obtener los usuarios del localStorage
+con la que creare un div con la informacion de cada usuario 
+*/
 function obtenerUsuarios(){
     if(localStorage.getItem("Usuarios") === null){
-        alert('empty localStorage check it!')
+        alert('localStorage vacio!!')
 
     }else{
         let formulario=JSON.parse(localStorage.getItem('Usuarios'))
@@ -98,7 +104,6 @@ function obtenerUsuarios(){
             caja.appendChild(update)
 
             deletebtn.addEventListener('click',e=>{
-                // alert(`estoy en el id ${id} y en le i ${i}`)
                 if(formulario[i].id===id){
                  alert(`Eliminando el usuario con id ${id}`)
                     formulario.splice(i,1)
@@ -138,12 +143,12 @@ guardar.addEventListener('click',e=>{
             let formulario=JSON.parse(localStorage.getItem('Usuarios'))
             formulario.push(newuser)
             localStorage.setItem('Usuarios',JSON.stringify(formulario))
-            alert('LocalStorage update new user correctly')
+            alert('El localStorage almaceno el usuario correctamente')
         }
         limpiarInputs()
         obtenerUsuarios()
     }else{
-        alert('empty form')
+        alert('Formulario vacio')
         limpiarInputs()
     }
 })
