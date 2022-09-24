@@ -27,7 +27,7 @@ function limpiarInputs(){
     idsModal.value=''
     nombreModal.value=''
     apellidosModal.value=''
-    fechaModalModal.value=''
+    fechaModal.value=''
     emailModal.value=''
 }
 /*Funcion que recibe como parametro el id de usuario a modificar para luego tanto modificarlo en 
