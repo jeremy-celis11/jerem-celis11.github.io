@@ -228,3 +228,63 @@ h4{
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     text-align: center;
   }
+
+/*Media screen*/
+/* Extra small devices (phones, 600px and down) */
+
+ @media only screen and (max-width: 600px){
+	main{
+		min-width: 418px;
+	}
+	header{
+		min-width: 418px;
+	}
+
+	
+	.box{
+		width: 360px;
+	}
+
+	.boxInfo{
+		margin: 20px 0px; 
+		width: 420px;
+	}
+    main{
+		flex-direction: column;
+	}
+
+} 
+/* Small devices (portrait tablets and large phones, 600px and up) */
+ @media only screen and (min-width: 600px){
+    .boxInfo{
+		margin: 20px 0px; 
+		width: 450px;
+	}
+	main{
+		flex-direction: column;
+	}
+
+} 
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px){
+	.boxInfo{
+		margin: 20px 0px; 
+
+	}
+	main{
+		flex-direction: column;
+	}
+
+    
+}
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px){
+	.boxInfo{
+		margin: 10px 70px;
+
+	}
+	main{
+		flex-direction: row;
+	}
+   
+}
