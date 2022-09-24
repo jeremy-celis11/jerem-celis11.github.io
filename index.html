@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/900/900618.png">
+    <link rel="stylesheet" href="style.css">
+    <title>App Crud</title>
+</head>
+<body>
+	<header>
+		<h1>Crud Usando localStorage</h1>
+		<p>Para este ejemplo estare simulando un CRUD pero acediendo desde el localStorage</p>
+	</header>
+	<main>
+		<div class="box">
+			<form autocomplete="off">
+				<h2>CRUD INFO</h2>
+				<div class="inputBox">
+					<input type="text" id="id" required="required">
+					<span>Id</span>
+					<i></i>
+				</div>
+				<div class="inputBox">
+					<input type="text" id="nombre" required="required">
+					<span>Nombre</span>
+					<i></i>
+				</div>
+				<div class="inputBox">
+					<input type="text" id="apellidos" required="required">
+					<span>Apellidos</span>
+					<i></i>
+				</div>
+				<div class="inputBox">
+					<input type="date" id="nacimiento"  required="required" >
+					<span>Fecha De Nacimiento</span>
+					<i></i>
+				</div>
+				<div class="inputBox">
+					<input type="email" id="email" required="required">
+					<span>Email</span>
+					<i></i>
+				</div>
+				<input type="submit" id="guardar" value="Guardar">
+			</form>
+		</div>
+		<div id="CrudBox">
+			<!-- Info aqui -->
+		</div>
+	</main>
+   
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
