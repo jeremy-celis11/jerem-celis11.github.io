@@ -28,10 +28,35 @@ function limpiarInputs(){
     apellidosModal.value=''
     fechaModalModal.value=''
     emailModal.value=''
+}//lista
+
+function actulizarUsuarios(id){
+    let formulario=JSON.parse(localStorage.getItem('Usuarios'))
+    for (let i = 0; i < formulario.length; i++){
+        close.addEventListener('click', () => {
+            if(idsModal.value.length!=0 &&nombreModal.value.length!=0 && apellidosModal.value.length!=0 && fechaModal.value.length!=0 && emailModal.value.length!=0 ){
+                modal_container.classList.remove('show')
+                if(formulario[i].id===id){
+                    formulario[i].id=idsModal.value
+                    formulario[i].nombre=nombreModal.value
+                    formulario[i].apellido=apellidosModal.value
+                    formulario[i].nacimiento=nacimientoModal.value
+                    formulario[i].email=emailModal.value
+                    localStorage.setItem('Usuarios',JSON.stringify(formulario))
+                    alert(`Se actulizo correctamente el usuario con id ${id}`)
+                    obtenerUsuarios()
+                }
+            }else{
+                alert('empty form')
+                limpiarInputs()
+            }
+        });
+    }
+    
 }
 function obtenerUsuarios(){
     if(localStorage.getItem("Usuarios") === null){
-        alert('localStorage Vacio!')
+        alert('empty localStorage check it!')
 
     }else{
         let formulario=JSON.parse(localStorage.getItem('Usuarios'))
@@ -73,6 +98,7 @@ function obtenerUsuarios(){
             caja.appendChild(update)
 
             deletebtn.addEventListener('click',e=>{
+                // alert(`estoy en el id ${id} y en le i ${i}`)
                 if(formulario[i].id===id){
                  alert(`Eliminando el usuario con id ${id}`)
                     formulario.splice(i,1)
