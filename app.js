@@ -138,7 +138,7 @@ guardar.addEventListener('click',e=>{
             let formulario=[]
             formulario.push(newuser)
             localStorage.setItem('Usuarios',JSON.stringify(formulario))
-            alert('LocalStorage update new user correctly')
+            alert('El localStorage almaceno el usuario correctamente')
         }else{
             let formulario=JSON.parse(localStorage.getItem('Usuarios'))
             formulario.push(newuser)
