@@ -46,7 +46,6 @@ function actulizarUsuarios(id){
                     formulario[i].nacimiento=nacimientoModal.value
                     formulario[i].email=emailModal.value
                     localStorage.setItem('Usuarios',JSON.stringify(formulario))
-                    alert(`Se actulizo correctamente el usuario con id ${id}`)
                     obtenerUsuarios()
                 }
             }else{
@@ -116,7 +115,12 @@ function obtenerUsuarios(){
                 }
             })
             update.addEventListener('click', () => {
-                modal_container.classList.add('show');
+                modal_container.classList.add('show')
+                idsModal.value=id
+                nombreModal.value=nombre
+                apellidosModal.value=apellido
+                fechaModal.value=nacimiento
+                emailModal.value=Correo
             });
             actulizarUsuarios(id)
 
